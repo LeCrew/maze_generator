@@ -66,6 +66,7 @@ class Maze:
     def new(self):
         cells_stack = []
         current_cell = self.random_cell()
+
         self.cells[current_cell.y][current_cell.x].visited = True
 
         while self.is_any_unvisited_cells():
@@ -89,7 +90,3 @@ class Maze:
                 self.cells[current_cell.y][current_cell.x].visited = True
             else:
                 current_cell = cells_stack.pop()
-
-if __name__ == '__main__':
-    maze = Maze(10, 30)
-    maze.display()
